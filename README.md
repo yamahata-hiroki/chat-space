@@ -1,10 +1,10 @@
+# DB設計
 
 ## groupsテーブル
 |Column|Type|Options|
-|------|----|-------|
-|image|text||
-|text|text||
-|user_id|integer|null: false, foreign_key: true|
+|------|------|-------|
+|name  |string|null: false|
+
 ### Association
 - has_many :messages
 - has_many :users, through: :groups_users
@@ -27,8 +27,9 @@
 |image|text||
 |text|text||
 |user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :groups
+- belongs_to :group
 - belongs_to :user
 
 
