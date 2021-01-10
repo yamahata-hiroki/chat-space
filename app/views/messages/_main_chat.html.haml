@@ -2,11 +2,12 @@
   .RightHeader
     .RightHeader__group
       .RightHeader__groupName
-        グループ名
+        =@group.name
       %ul.RightHeader__memberList
         Member：
         %li.RightHeader__member
-          ユーザー名
+        - @group.users.each do |user|
+          = user.name
     = link_to  edit_group_path(@group),class: "RightHeader__editButton" do
       Edit
   .MessageField
